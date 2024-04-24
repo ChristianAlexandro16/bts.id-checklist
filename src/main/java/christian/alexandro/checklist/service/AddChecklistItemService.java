@@ -21,7 +21,7 @@ public class AddChecklistItemService {
             return new ResponseEntity<>(check, HttpStatus.BAD_REQUEST);
         }
 
-        boolean isNameExist = checklistItemRepository.findByNameAndChecklistIdAndActiveFlagTrue(name, checklistId).isPresent();
+        boolean isNameExist = checklistItemRepository.findByItemNameAndChecklistIdAndActiveFlagTrue(name, checklistId).isPresent();
 
         if (isNameExist) {
             return new ResponseEntity<>("Nama sudah didaftarkan", HttpStatus.CONFLICT);

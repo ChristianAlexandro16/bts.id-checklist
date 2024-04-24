@@ -10,7 +10,7 @@ import java.util.Optional;
 @Repository
 public interface ChecklistItemRepository extends JpaRepository<ChecklistItemEntity, Long> {
 
-    Optional<Object> findByNameAndChecklistIdAndActiveFlagTrue(String name, Long checklistId);
+    Optional<Object> findByItemNameAndChecklistIdAndActiveFlagTrue(String name, Long checklistId);
 
     List<ChecklistItemEntity> findAllByChecklistIdAndActiveFlagTrue(Long checklistId);
 
